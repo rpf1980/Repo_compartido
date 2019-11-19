@@ -1,0 +1,10 @@
+C:\CsharpProjects\NavegadorV04\NavegadorV04\bin\Debug\NavegadorV04.exe.config
+C:\CsharpProjects\NavegadorV04\NavegadorV04\bin\Debug\NavegadorV04.exe
+C:\CsharpProjects\NavegadorV04\NavegadorV04\bin\Debug\NavegadorV04.pdb
+C:\CsharpProjects\NavegadorV04\NavegadorV04\obj\Debug\NavegadorV04.csprojAssemblyReference.cache
+C:\CsharpProjects\NavegadorV04\NavegadorV04\obj\Debug\NavegadorV04.Form1.resources
+C:\CsharpProjects\NavegadorV04\NavegadorV04\obj\Debug\NavegadorV04.Properties.Resources.resources
+C:\CsharpProjects\NavegadorV04\NavegadorV04\obj\Debug\NavegadorV04.csproj.GenerateResource.cache
+C:\CsharpProjects\NavegadorV04\NavegadorV04\obj\Debug\NavegadorV04.exe
+C:\CsharpProjects\NavegadorV04\NavegadorV04\obj\Debug\NavegadorV04.pdb
+C:\CsharpProjects\NavegadorV04\NavegadorV04\obj\Debug\NavegadorV04.Form2.resources

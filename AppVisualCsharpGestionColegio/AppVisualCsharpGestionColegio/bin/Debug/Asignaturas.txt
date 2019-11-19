@@ -1,0 +1,4 @@
+GH005*Física*Ciencias*3
+FH010*Lógica computacional*Matemáticas*5
+GR009*Inglés*Inglés*3
+TT023*Geología*Ciencias*1

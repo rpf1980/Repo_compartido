@@ -1,0 +1,6 @@
+C:\CsharpProjects\BORRADOR\BORRADOR\bin\Debug\BORRADOR.exe.config
+C:\CsharpProjects\BORRADOR\BORRADOR\bin\Debug\BORRADOR.exe
+C:\CsharpProjects\BORRADOR\BORRADOR\bin\Debug\BORRADOR.pdb
+C:\CsharpProjects\BORRADOR\BORRADOR\obj\Debug\BORRADOR.csprojAssemblyReference.cache
+C:\CsharpProjects\BORRADOR\BORRADOR\obj\Debug\BORRADOR.exe
+C:\CsharpProjects\BORRADOR\BORRADOR\obj\Debug\BORRADOR.pdb
