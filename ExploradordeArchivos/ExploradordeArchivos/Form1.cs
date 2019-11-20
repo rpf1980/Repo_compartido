@@ -64,14 +64,88 @@ namespace ExploradordeArchivos
                 listView1.Items.Add(item);
             }
             foreach (FileInfo file in nodeDirInfo.GetFiles())
-            {
-                item = new ListViewItem(file.Name, 1);
-                subItems = new ListViewItem.ListViewSubItem[]
-                { new ListViewItem.ListViewSubItem(item, "Fichero"), new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())};
-                item.SubItems.AddRange(subItems);
-                listView1.Items.Add(item);
+            {                
+                //Switch que usamos para validar tipo de extensión
+                switch(file.Extension)
+                {
+                    case ".txt":
+                        {
+                            item = new ListViewItem(file.Name, 4); //Item con índice 4 (fichero de texto)
+                            subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                            { new ListViewItem.ListViewSubItem(item, "Fichero"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                            item.SubItems.AddRange(subItems); //Añade los subitems
+                            listView1.Items.Add(item); //Añade el item completo a la listview
+                        }
+                        break;
+                    case ".pdf":
+                        {
+                            item = new ListViewItem(file.Name, 3); //Item con índice 3 (documento pdf)
+                            subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                            { new ListViewItem.ListViewSubItem(item, "Documento pdf"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                            item.SubItems.AddRange(subItems); //Añade los subitems
+                            listView1.Items.Add(item); //Añade el item completo a la listview
+                        }
+                        break;
+                    case ".rar":
+                    case".zip":
+                        {
+                            item = new ListViewItem(file.Name, 5); //Item con índice 4 (Archivo comprimido)
+                            subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                            { new ListViewItem.ListViewSubItem(item, "Archivo comprimido"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                            item.SubItems.AddRange(subItems); //Añade los subitems
+                            listView1.Items.Add(item); //Añade el item completo a la listview
+                        }
+                        break;
+                    case ".iso":
+                        {
+                            item = new ListViewItem(file.Name, 2); //Item con índice 2 (Imagen iso)
+                            subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                            { new ListViewItem.ListViewSubItem(item, "Imagen iso"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                            item.SubItems.AddRange(subItems); //Añade los subitems
+                            listView1.Items.Add(item); //Añade el item completo a la listview
+                        }
+                        break;
+                    case ".png":
+                    case ".jpg":
+                        {
+                            item = new ListViewItem(file.Name, 1); //Item con índice 1 (Imagen)
+                            subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                            { new ListViewItem.ListViewSubItem(item, "Imagen"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                            item.SubItems.AddRange(subItems); //Añade los subitems
+                            listView1.Items.Add(item); //Añade el item completo a la listview
+                        }
+                        break;
+                    case ".exe":
+                        {
+                            item = new ListViewItem(file.Name, 6); //Item con índice 6 (Archivo ejecutable)
+                            subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                            { new ListViewItem.ListViewSubItem(item, "Archivo ejecutable"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                            item.SubItems.AddRange(subItems); //Añade los subitems
+                            listView1.Items.Add(item); //Añade el item completo a la listview
+                        }
+                        break;
+                    default:
+                        item = new ListViewItem(file.Name, 7); //Item con índice 7 (Archivo por defecto--> otros)
+                        subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                        { new ListViewItem.ListViewSubItem(item, "Archivo"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                        item.SubItems.AddRange(subItems); //Añade los subitems
+                        listView1.Items.Add(item); //Añade el item completo a la listview
+                        break;
+                }             
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private void idIconosPequenios_Click(object sender, EventArgs e)
+        {
+            listView1.View = View.SmallIcon;
         }
     }
     }
