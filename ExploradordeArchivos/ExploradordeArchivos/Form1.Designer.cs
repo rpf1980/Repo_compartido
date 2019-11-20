@@ -46,6 +46,7 @@
             this.idDetalle = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgLisBig = new System.Windows.Forms.ImageList(this.components);
+            this.imgListBig = new System.Windows.Forms.ImageList(this.components);
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -109,14 +110,14 @@
             // 
             this.imgListSmall.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListSmall.ImageStream")));
             this.imgListSmall.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListSmall.Images.SetKeyName(0, "Folder");
-            this.imgListSmall.Images.SetKeyName(1, "icoFotoSmall.png");
-            this.imgListSmall.Images.SetKeyName(2, "icoIsoSmall.png");
-            this.imgListSmall.Images.SetKeyName(3, "icoPdfSmall.png");
-            this.imgListSmall.Images.SetKeyName(4, "icoTxtSmall.png");
-            this.imgListSmall.Images.SetKeyName(5, "icoExeSmall.png");
-            this.imgListSmall.Images.SetKeyName(6, "icoRarSmall.png");
-            this.imgListSmall.Images.SetKeyName(7, "icoDefaultSmall.png");
+            this.imgListSmall.Images.SetKeyName(0, "carpeta.png");
+            this.imgListSmall.Images.SetKeyName(1, "exe.png");
+            this.imgListSmall.Images.SetKeyName(2, "foto.png");
+            this.imgListSmall.Images.SetKeyName(3, "iso.png");
+            this.imgListSmall.Images.SetKeyName(4, "otros.png");
+            this.imgListSmall.Images.SetKeyName(5, "pdf.png");
+            this.imgListSmall.Images.SetKeyName(6, "rar.png");
+            this.imgListSmall.Images.SetKeyName(7, "txt.png");
             // 
             // listView1
             // 
@@ -138,7 +139,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Nombre";
-            this.columnHeader1.Width = 210;
+            this.columnHeader1.Width = 300;
             // 
             // columnHeader2
             // 
@@ -184,12 +185,14 @@
             this.idIconosGrandes.Name = "idIconosGrandes";
             this.idIconosGrandes.Size = new System.Drawing.Size(180, 22);
             this.idIconosGrandes.Text = "Iconos grandes";
+            this.idIconosGrandes.Click += new System.EventHandler(this.idIconosGrandes_Click);
             // 
             // idLista
             // 
             this.idLista.Name = "idLista";
             this.idLista.Size = new System.Drawing.Size(180, 22);
             this.idLista.Text = "Lista";
+            this.idLista.Click += new System.EventHandler(this.idLista_Click);
             // 
             // idDetalle
             // 
@@ -208,6 +211,19 @@
             this.imgLisBig.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imgLisBig.ImageSize = new System.Drawing.Size(16, 16);
             this.imgLisBig.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imgListBig
+            // 
+            this.imgListBig.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListBig.ImageStream")));
+            this.imgListBig.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListBig.Images.SetKeyName(0, "carpeta.ico");
+            this.imgListBig.Images.SetKeyName(1, "exe.ico");
+            this.imgListBig.Images.SetKeyName(2, "foto.ico");
+            this.imgListBig.Images.SetKeyName(3, "iso.ico");
+            this.imgListBig.Images.SetKeyName(4, "otros.ico");
+            this.imgListBig.Images.SetKeyName(5, "pdf.ico");
+            this.imgListBig.Images.SetKeyName(6, "rar.ico");
+            this.imgListBig.Images.SetKeyName(7, "txt.ico");
             // 
             // Form1
             // 
@@ -251,6 +267,7 @@
         private System.Windows.Forms.ToolStripMenuItem idLista;
         private System.Windows.Forms.ToolStripMenuItem idDetalle;
         private System.Windows.Forms.ImageList imgLisBig;
+        private System.Windows.Forms.ImageList imgListBig;
     }
 }
 
