@@ -21,14 +21,22 @@ namespace ExploradordeArchivos
         private void PopulateTreeView()
         {
             TreeNode rootNode;
-            DirectoryInfo info = new DirectoryInfo(@"../..");
-            if (info.Exists)
+            DirectoryInfo info = new DirectoryInfo("C:\\Users\\RPF\\Documents\\");
+
+            try
             {
-                rootNode = new TreeNode(info.Name);
-                rootNode.Tag = info;
-                GetDirectories(info.GetDirectories(), rootNode);
-                treeView1.Nodes.Add(rootNode);
+                if (info.Exists)
+                {
+                    rootNode = new TreeNode(info.Name);
+                    rootNode.Tag = info;
+                    GetDirectories(info.GetDirectories(), rootNode);
+                    treeView1.Nodes.Add(rootNode);
+                }
             }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }           
         }
         private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
         {
@@ -53,6 +61,7 @@ namespace ExploradordeArchivos
             TreeNode newSelected = e.Node;
             listView1.Items.Clear();
             DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
+            
             ListViewItem.ListViewSubItem[] subItems;
             ListViewItem item = null;
             foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
@@ -163,6 +172,12 @@ namespace ExploradordeArchivos
         private void idIconosGrandes_Click(object sender, EventArgs e)
         {
             listView1.View = View.LargeIcon;
+        }
+
+        //Vista DETALLES
+        private void idDetalle_Click(object sender, EventArgs e)
+        {
+            listView1.View = View.Details;
         }
     }
 }

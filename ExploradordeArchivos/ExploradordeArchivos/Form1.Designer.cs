@@ -127,6 +127,7 @@
             this.columnHeader3});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
+            this.listView1.LargeImageList = this.imgListBig;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(511, 472);
@@ -176,21 +177,21 @@
             // idIconosPequenios
             // 
             this.idIconosPequenios.Name = "idIconosPequenios";
-            this.idIconosPequenios.Size = new System.Drawing.Size(180, 22);
+            this.idIconosPequenios.Size = new System.Drawing.Size(164, 22);
             this.idIconosPequenios.Text = "Iconos pequeños";
             this.idIconosPequenios.Click += new System.EventHandler(this.idIconosPequenios_Click);
             // 
             // idIconosGrandes
             // 
             this.idIconosGrandes.Name = "idIconosGrandes";
-            this.idIconosGrandes.Size = new System.Drawing.Size(180, 22);
+            this.idIconosGrandes.Size = new System.Drawing.Size(164, 22);
             this.idIconosGrandes.Text = "Iconos grandes";
             this.idIconosGrandes.Click += new System.EventHandler(this.idIconosGrandes_Click);
             // 
             // idLista
             // 
             this.idLista.Name = "idLista";
-            this.idLista.Size = new System.Drawing.Size(180, 22);
+            this.idLista.Size = new System.Drawing.Size(164, 22);
             this.idLista.Text = "Lista";
             this.idLista.Click += new System.EventHandler(this.idLista_Click);
             // 
@@ -199,6 +200,7 @@
             this.idDetalle.Name = "idDetalle";
             this.idDetalle.Size = new System.Drawing.Size(180, 22);
             this.idDetalle.Text = "Detalle";
+            this.idDetalle.Click += new System.EventHandler(this.idDetalle_Click);
             // 
             // sALIRToolStripMenuItem
             // 
