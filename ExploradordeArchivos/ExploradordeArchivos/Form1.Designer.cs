@@ -118,6 +118,8 @@
             this.imgListSmall.Images.SetKeyName(5, "pdf.png");
             this.imgListSmall.Images.SetKeyName(6, "rar.png");
             this.imgListSmall.Images.SetKeyName(7, "txt.png");
+            this.imgListSmall.Images.SetKeyName(8, "binary.png");
+            this.imgListSmall.Images.SetKeyName(9, "mp3.png");
             // 
             // listView1
             // 
@@ -162,6 +164,8 @@
             this.imgListBig.Images.SetKeyName(5, "pdf.ico");
             this.imgListBig.Images.SetKeyName(6, "rar.ico");
             this.imgListBig.Images.SetKeyName(7, "txt.ico");
+            this.imgListBig.Images.SetKeyName(8, "binary.png");
+            this.imgListBig.Images.SetKeyName(9, "mp3.png");
             // 
             // menuStrip
             // 
@@ -234,9 +238,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 496);
             this.Controls.Add(this.toolStripContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Form1";
-            this.Text = "Explorador de Archivos";
+            this.Text = "EXPLORADOR DE ARCHIVOS";
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();

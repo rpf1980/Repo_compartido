@@ -12,19 +12,17 @@ using System.IO;
 namespace ExploradordeArchivos
 {
     public partial class Form1 : Form
-    {
+    {     
         public Form1()
         {
             InitializeComponent();
             PopulateTreeView();
+            
         }
         private void PopulateTreeView()
         {
-
-            //Environment.GetFolderPath( Environment.SpecialFolder.MyDocuments )
-            TreeNode rootNode;
-            //DirectoryInfo info = new DirectoryInfo(Environment.SpecialFolder.MyDocuments.ToString());
-            DirectoryInfo info = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            TreeNode rootNode;         
+            DirectoryInfo info = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
 
             try
             {
@@ -61,7 +59,7 @@ namespace ExploradordeArchivos
                         }
                         nodeToAddTo.Nodes.Add(aNode);
                     }
-                    catch(IOException ex)
+                    catch(UnauthorizedAccessException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }                    
@@ -97,7 +95,7 @@ namespace ExploradordeArchivos
                 {
                     case ".txt":
                         {
-                            item = new ListViewItem(file.Name, 7); //Item con índice 4 (fichero de texto)
+                            item = new ListViewItem(file.Name, 7); //Item con índice 7 (Ficheros)
                             subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
                             { new ListViewItem.ListViewSubItem(item, "Fichero"),//Esta línea establece texto a mostrar del item
                               new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
@@ -107,7 +105,7 @@ namespace ExploradordeArchivos
                         break;
                     case ".exe":
                         {
-                            item = new ListViewItem(file.Name, 1); //Item con índice 3 (documento pdf)
+                            item = new ListViewItem(file.Name, 1); //Item con índice 1 (Archivos ejecutables)
                             subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
                             { new ListViewItem.ListViewSubItem(item, "Archivo ejecutable"),//Esta línea establece texto a mostrar del item
                               new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
@@ -120,7 +118,7 @@ namespace ExploradordeArchivos
                     case ".gif":
                     case ".ico":
                         {
-                            item = new ListViewItem(file.Name, 2); //Item con índice 4 (Archivo comprimido)
+                            item = new ListViewItem(file.Name, 2); //Item con índice 2 (Imágenes)
                             subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
                             { new ListViewItem.ListViewSubItem(item, "Imagen"),//Esta línea establece texto a mostrar del item
                               new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
@@ -140,7 +138,7 @@ namespace ExploradordeArchivos
                         break;
                     case ".pdf":
                         {
-                            item = new ListViewItem(file.Name, 5); //Item con índice 1 (Imagen)
+                            item = new ListViewItem(file.Name, 5); //Item con índice 5 (Documentos pdf)
                             subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
                             { new ListViewItem.ListViewSubItem(item, "Documento pdf"),//Esta línea establece texto a mostrar del item
                               new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
@@ -152,7 +150,7 @@ namespace ExploradordeArchivos
                     case ".zip":
                     case ".gz":
                         {
-                            item = new ListViewItem(file.Name, 6); //Item con índice 6 (Archivo ejecutable)
+                            item = new ListViewItem(file.Name, 6); //Item con índice 6 (Archivo comprimido)
                             subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
                             { new ListViewItem.ListViewSubItem(item, "Archivo comprimido"),//Esta línea establece texto a mostrar del item
                               new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
@@ -160,11 +158,31 @@ namespace ExploradordeArchivos
                             listView1.Items.Add(item); //Añade el item completo a la listview
                         }
                         break;
+                    case ".bin":
+                        {
+                            item = new ListViewItem(file.Name, 8); //Item con índice 8 (Archivos binarios)
+                            subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                            { new ListViewItem.ListViewSubItem(item, "Archivo binario"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                            item.SubItems.AddRange(subItems); //Añade los subitems
+                            listView1.Items.Add(item); //Añade el item completo a la listview
+                        }
+                        break;
+                    case ".mp3":
+                        {
+                            item = new ListViewItem(file.Name, 9); //Item con índice 9 (Archivos de audio mp3)
+                            subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
+                            { new ListViewItem.ListViewSubItem(item, "Archivo mp3"),//Esta línea establece texto a mostrar del item
+                              new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
+                            item.SubItems.AddRange(subItems); //Añade los subitems
+                            listView1.Items.Add(item); //Añade el item completo a la listview
+                        }
+                        break;
 
                     default:
-                        item = new ListViewItem(file.Name, 4); //Item con índice 7 (Archivo por defecto--> otros)
+                        item = new ListViewItem(file.Name, 4); //Item con índice 4 (Otros archivos)
                         subItems = new ListViewItem.ListViewSubItem[] //Array de subitems
-                        { new ListViewItem.ListViewSubItem(item, "Fichero de texto"),//Esta línea establece texto a mostrar del item
+                        { new ListViewItem.ListViewSubItem(item, "Archivo"),//Esta línea establece texto a mostrar del item
                               new ListViewItem.ListViewSubItem(item,file.LastAccessTime.ToShortDateString())}; //Esta línea correponde a la info del último acceso al fichero
                         item.SubItems.AddRange(subItems); //Añade los subitems
                         listView1.Items.Add(item); //Añade el item completo a la listview
