@@ -20,8 +20,11 @@ namespace ExploradordeArchivos
         }
         private void PopulateTreeView()
         {
+
+            //Environment.GetFolderPath( Environment.SpecialFolder.MyDocuments )
             TreeNode rootNode;
-            DirectoryInfo info = new DirectoryInfo("C:\\Users\\RPF\\Documents\\");
+            //DirectoryInfo info = new DirectoryInfo(Environment.SpecialFolder.MyDocuments.ToString());
+            DirectoryInfo info = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
 
             try
             {
@@ -33,27 +36,42 @@ namespace ExploradordeArchivos
                     treeView1.Nodes.Add(rootNode);
                 }
             }
-            catch(Exception e)
+            catch(IOException ex)
             {
-                Console.WriteLine("Error: " + e.Message);
+                MessageBox.Show(ex.Message);      
             }           
         }
         private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
         {
-            TreeNode aNode;
-            DirectoryInfo[] subSubDirs;
-            foreach (DirectoryInfo subDir in subDirs)
+            try
             {
-                aNode = new TreeNode(subDir.Name, 0, 0);
-                aNode.Tag = subDir;
-                aNode.ImageKey = "Folder";
-                subSubDirs = subDir.GetDirectories();
-                if (subSubDirs.Length != 0)
+                TreeNode aNode;
+                DirectoryInfo[] subSubDirs;
+                foreach (DirectoryInfo subDir in subDirs)
                 {
-                    GetDirectories(subSubDirs, aNode);
+                    try
+                    {
+                        aNode = new TreeNode(subDir.Name, 0, 0);
+                        aNode.Tag = subDir;
+                        aNode.ImageKey = "Folder";
+                        subSubDirs = subDir.GetDirectories();
+                        if (subSubDirs.Length != 0)
+                        {
+                            GetDirectories(subSubDirs, aNode);
+                        }
+                        nodeToAddTo.Nodes.Add(aNode);
+                    }
+                    catch(IOException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }                    
                 }
-                nodeToAddTo.Nodes.Add(aNode);
             }
+            catch(IOException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -178,6 +196,12 @@ namespace ExploradordeArchivos
         private void idDetalle_Click(object sender, EventArgs e)
         {
             listView1.View = View.Details;
+        }
+
+        //Btn SALIR 
+        private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

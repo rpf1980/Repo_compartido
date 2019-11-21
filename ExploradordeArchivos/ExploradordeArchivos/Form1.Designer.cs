@@ -38,6 +38,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imgListBig = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.vISTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idIconosPequenios = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@
             this.idDetalle = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgLisBig = new System.Windows.Forms.ImageList(this.components);
-            this.imgListBig = new System.Windows.Forms.ImageList(this.components);
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -150,6 +150,19 @@
             // 
             this.columnHeader3.Text = "Última Modificación";
             // 
+            // imgListBig
+            // 
+            this.imgListBig.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListBig.ImageStream")));
+            this.imgListBig.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListBig.Images.SetKeyName(0, "carpeta.ico");
+            this.imgListBig.Images.SetKeyName(1, "exe.ico");
+            this.imgListBig.Images.SetKeyName(2, "foto.ico");
+            this.imgListBig.Images.SetKeyName(3, "iso.ico");
+            this.imgListBig.Images.SetKeyName(4, "otros.ico");
+            this.imgListBig.Images.SetKeyName(5, "pdf.ico");
+            this.imgListBig.Images.SetKeyName(6, "rar.ico");
+            this.imgListBig.Images.SetKeyName(7, "txt.ico");
+            // 
             // menuStrip
             // 
             this.menuStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -198,7 +211,7 @@
             // idDetalle
             // 
             this.idDetalle.Name = "idDetalle";
-            this.idDetalle.Size = new System.Drawing.Size(180, 22);
+            this.idDetalle.Size = new System.Drawing.Size(164, 22);
             this.idDetalle.Text = "Detalle";
             this.idDetalle.Click += new System.EventHandler(this.idDetalle_Click);
             // 
@@ -207,25 +220,13 @@
             this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
             this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.sALIRToolStripMenuItem.Text = "SALIR";
+            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
             // 
             // imgLisBig
             // 
             this.imgLisBig.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imgLisBig.ImageSize = new System.Drawing.Size(16, 16);
             this.imgLisBig.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // imgListBig
-            // 
-            this.imgListBig.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListBig.ImageStream")));
-            this.imgListBig.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListBig.Images.SetKeyName(0, "carpeta.ico");
-            this.imgListBig.Images.SetKeyName(1, "exe.ico");
-            this.imgListBig.Images.SetKeyName(2, "foto.ico");
-            this.imgListBig.Images.SetKeyName(3, "iso.ico");
-            this.imgListBig.Images.SetKeyName(4, "otros.ico");
-            this.imgListBig.Images.SetKeyName(5, "pdf.ico");
-            this.imgListBig.Images.SetKeyName(6, "rar.ico");
-            this.imgListBig.Images.SetKeyName(7, "txt.ico");
             // 
             // Form1
             // 
